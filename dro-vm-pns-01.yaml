@@ -1,0 +1,40 @@
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  annotations:
+    kubevirt.io/latest-observed-api-version: v1
+  name: dro-vm-pns-01
+  namespace: protected-ns
+spec:
+  runStrategy: Manual
+  template:
+    spec:
+      architecture: amd64
+      domain:
+        devices:
+          autoattachPodInterface: false
+          interfaces:
+            - macAddress: '02:be:30:00:00:08'
+              masquerade: {}
+              name: default
+        machine:
+          type: pc-q35-rhel9.4.0
+        resources:
+          requests:
+            memory: 6Gi
+      networks:
+        - name: default
+          pod: {}
+      subdomain: headless
+      volumes:
+        - name: rootdisk
+          persistentVolumeClaim:
+            claimName: dro-vm-pns-01-volume
+        - cloudInitNoCloud:
+            userData: |
+              #cloud-config
+              chpasswd:
+                expire: false
+              password: kz9f-dpxk-vqny
+              user: fedora
+          name: cloudinitdisk
