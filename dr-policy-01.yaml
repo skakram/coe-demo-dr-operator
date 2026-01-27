@@ -2,6 +2,7 @@ apiVersion: hspc.hitachi.com/v1alpha2
 kind: DRPolicy
 metadata:
   name: drpolicy-protectedns-async
+  namespace: hspc-replication-operator-system
   annotations:
     argocd.argoproj.io/sync-wave: "1"
 spec:
