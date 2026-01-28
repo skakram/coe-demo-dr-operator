@@ -7,7 +7,7 @@ metadata:
     app: dro-vm-pns-01
   annotations:
     kubevirt.io/latest-observed-api-version: v1
-    argocd.argoproj.io/sync-wave: "2"
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   runStrategy: Manual
   dataVolumeTemplates:
