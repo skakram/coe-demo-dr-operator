@@ -3,7 +3,7 @@ kind: VirtualMachine
 metadata:
   annotations:
     kubevirt.io/latest-observed-api-version: v1
-    argocd.argoproj.io/sync-wave: "5"
+    argocd.argoproj.io/sync-wave: "4"
   name: dro-vm-pns-02
   namespace: protected-ns
 spec:
