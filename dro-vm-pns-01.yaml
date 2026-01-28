@@ -1,4 +1,3 @@
-
 apiVersion: kubevirt.io/v1
 kind: VirtualMachine
 metadata:
@@ -6,6 +5,9 @@ metadata:
   namespace: protected-ns
   labels:
     app: dro-vm-pns-01
+  annotations:
+    kubevirt.io/latest-observed-api-version: v1
+    argocd.argoproj.io/sync-wave: "2"
 spec:
   runStrategy: Manual
   dataVolumeTemplates:
