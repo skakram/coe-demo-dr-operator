@@ -36,6 +36,6 @@ spec:
               #cloud-config
               chpasswd:
                 expire: false
-              password: kz9f-dpxk-vqny
+              password: hitachi
               user: fedora
           name: cloudinitdisk
